@@ -3,6 +3,7 @@
     <router-link to="/">Top</router-link>
     <router-link to="/services">Services</router-link>
     <router-link to="/about">About</router-link>
+        <router-link to="/news">News</router-link>
     <router-link to="/contact">Contact</router-link>
   </nav>
   <router-view/>
