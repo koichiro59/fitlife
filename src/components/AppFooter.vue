@@ -34,13 +34,22 @@ footer{
     width: 350px;
     margin-top: 10px;
     margin-left: 10px;
-    flex-grow: 2;
+    flex-grow: 1;
+    font-weight: 500;
 }
 .info-menu p{
-    margin-left: 20px;
+    margin-left: 60px;
 }
 .footer-nav{
     display: flex;
-    flex-grow: 1;
+    align-items: center;
+    gap: 30px;
+    flex-grow: 2;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+.footer-nav a{
+    text-decoration: none;
+    color: #fff;
 }
 </style>

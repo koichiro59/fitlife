@@ -1,7 +1,7 @@
 <template>
     <header>
         <div class="logo">
-            <img src="@/assets/images/logo.jpg" alt="logo">
+            <router-link to="/"><img src="@/assets/images/logo.jpg" alt="logo"></router-link>
         </div>
         <nav class="nav-menu">
             <router-link to="/">ホーム</router-link>
@@ -37,6 +37,7 @@ header {
     top: 0;
     width: 100%;
     height: 60px;
+    font-weight: 500;
 }
 header img {
     height: 80px;
