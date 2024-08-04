@@ -59,6 +59,9 @@ footer{
 .footer-nav h3{
     margin: 20px auto -5px auto;
 }
+.footer-nav p{
+    margin-left: 10px;
+}
 .footer-nav a{
     text-decoration: none;
     color: #fff;

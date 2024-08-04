@@ -51,32 +51,37 @@ export default defineComponent({
 </script>
 
 <style scoped>
- .image-container1{
-  position: relative;
-  width: 100%;
-  height: 500px;
-  background-color: #f2f2f2; 
-  display: flex;
-  align-items: center;
- }
+.image-container1 {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-color: #f2f2f2;
+    overflow: hidden; /* Ensure the pseudo-element does not overflow */
+}
+
 .image-container1::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  background-image: url('../assets/images/home3.jpg');
-  background-size: cover;
-  background-position: center;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url('../assets/images/home3.jpg');
+    background-size: cover;
+    background-position: calc(50% - 20px) ;
+    transition: transform 0.5s ease;
+    transform-origin:left center; /* Ensure the image expands from the right edge */
+}
+.image-container1:hover::before {
+    transform: scale(1.2);
+    transform-origin: left center; /* Ensure the image expands from the right edge */
 }
  .image-container2{
   position: relative;
   width: 100%;
   height: 500px;
   background-color: #f2f2f2; 
-  display: flex;
-  align-items: center;
+  overflow: hidden; /* Ensure the pseudo-element does not overflow */
  }
 .image-container2::before {
   content: '';
@@ -87,15 +92,20 @@ export default defineComponent({
   height: 100%;
   background-image: url('../assets/images/home2.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: calc(50% - 20px) ;
+  transition: transform 0.5s ease;
+  transform-origin:right center; /* Ensure the image expands from the right edge */
+}
+.image-container2:hover::before {
+    transform: scale(1.2);
+    transform-origin: right center; /* Ensure the image expands from the right edge */
 }
 .image-container3{
   position: relative;
   width: 100%;
   height: 500px;
   background-color: #f2f2f2; 
-  display: flex;
-  align-items: center;
+  overflow: hidden; /* Ensure the pseudo-element does not overflow */
 }
 .image-container3::before {
   content: '';
@@ -106,7 +116,13 @@ export default defineComponent({
   height: 100%;
   background-image: url('../assets/images/facility.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: calc(50% - 20px) ;
+  transition: transform 0.5s ease;
+  transform-origin:left center; /* Ensure the image expands from the right edge */
+}
+.image-container3:hover::before {
+    transform: scale(1.2);
+    transform-origin: left center; /* Ensure the image expands from the right edge */
 }
 .logo-text{
   font-size: 30px;
