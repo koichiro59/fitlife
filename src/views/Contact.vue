@@ -71,14 +71,15 @@ export default defineComponent({
     margin: 10px auto;
 }
 .submitButton{
-    width: 80px;
-    height: 40px;
+    width: 150px;
+    height: 60px;
     padding: 10px 20px;
     border-radius: 3px;
-    border: #66ff66 solid 1px;
+    border: #66ff66 solid 2px;
     background: #fff;
     color: #66ff66;
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: bolder;
 }
 .blank{
     height:60px
