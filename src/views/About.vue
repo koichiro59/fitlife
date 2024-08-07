@@ -51,6 +51,9 @@ export default defineComponent({
 .subContainer{
   margin: 0 100px;
 }
+.subContainer p{
+  font-size: 20px;
+}
 .title{
     font-size: 46px;
 }

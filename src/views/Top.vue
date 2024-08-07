@@ -17,6 +17,11 @@
             <h2>ミッション</h2>
           </div>
           <p class="subText2">健康と幸福のための変革</p>
+          <router-link to="/about" >
+            <div class="homelink1">
+              <button class="pulldown1">＞</button><a href="/about" class="a1">私たちについて</a>
+            </div>
+          </router-link>
         </div>
       </div>
       <div class="image-container3">
@@ -24,11 +29,14 @@
           <div class="logo-text">
             <h2>事業内容</h2>
           </div>
-          <ul class="subText">
-            <li>FitLife Workouts</li>
-            <li>FitLife Eats</li>
-            <li>FitLife Challenges</li>
-          </ul>
+            <p class="subText">FitLife Workouts</p>
+            <p class="subText">FitLife Eats</p>
+            <p class="subText">FitLife Challenges</p>
+            <router-link to="/services">
+              <div class="homelink2">
+                <button class="pulldown2">＞</button><a href="/services" class="a2">事業一覧</a>
+              </div>
+            </router-link>
         </div>
       </div>
     </div>
@@ -48,9 +56,46 @@ export default defineComponent({
     AppFooter
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.logo-text, .subText');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    elements.forEach(element => {
+        observer.observe(element);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.logo-text2, .subText2');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    elements.forEach(element => {
+        observer.observe(element);
+    });
+});
 </script>
 
 <style scoped>
+body{
+  text-decoration: none;
+}
 .image-container1 {
     position: relative;
     width: 100%;
@@ -127,24 +172,81 @@ export default defineComponent({
 .logo-text{
   font-size: 30px;
   padding: 10px;
+  margin-top:70px;
   margin-left: 40px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 .logo-text2{
   font-size: 30px;
   padding: 10px;
+  margin-top: 70px;
   margin-left: 820px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 .subText{
-  font-size: 20px;
+  font-size: 24px;
   padding: 10px;
-  margin-top: 20px;
+  margin-top: -10px;
   margin-left: 40px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 .subText2{
-  font-size: 20px;
+  font-size: 24px;
   padding: 10px;
-  margin-top: 20px;
+  margin-top: -10px;
   margin-left: 820px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
-
+.logo-text.visible, .subText.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.logo-text2.visible, .subText2.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.homelink1{
+  font-size: 24px;
+  margin-left: 830px;
+  color: #fb9e00;
+}
+.homelink2{
+  font-size: 24px;
+  margin-left: 50px;
+  color: #66ff66;
+}
+.pulldown1{
+  border-radius: 50%;
+  border: none;
+  background: #fb9e00;
+  color: #fff;
+      font-size: 20px;
+}
+.pulldown2{
+  border-radius: 50%;
+  border: none;
+  background: #66ff66;
+  color: #fff;
+      font-size: 20px;
+}
+.a1{
+  text-decoration: none;
+  color: #fb9e00;
+}
+.a2{
+  text-decoration: none;
+  color: #66ff66;;
+}
+a{
+  display: inline-block;
+  text-decoration: none;
+}
 </style>
